@@ -1,0 +1,12 @@
+{
+    "name": "demanliu/pipes",
+    "description": "some simple and easy pipes to deal with data quilkly",
+    "type": "libiary",
+    "authors": [
+        {
+            "name": "demanliu",
+            "email": "384012351@qq.com"
+        }
+    ],
+    "require": {}
+}
