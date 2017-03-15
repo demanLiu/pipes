@@ -1,5 +1,5 @@
 <?php
-
+namespace pipes;
 use pipes\Contract\Pipe as IPipe;
 /**
  * Class Pipe
