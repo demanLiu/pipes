@@ -19,10 +19,10 @@ class Pipe implements IPipe
     /**
      * Pipe constructor.
      */
-    function __construct()
+    function __construct($payload=[],$strategy='')
     {
-        $this->payload = [];
-        $this->strategy = '';
+        $this->payload = $payload;
+        $this->strategy = $strategy;
     }
 
     /**
@@ -58,12 +58,20 @@ class Pipe implements IPipe
     }
 
     /**
-     * @return bool
+     * @return array
      */
     public function process()
     {
-        return array_walk($this->payload,$this->strategy);
+        return array_map($this->strategy,$this->payload);
     }
 
+    /**
+     * @param $data
+     * @return mixed
+     */
+    public function processInputData($data)
+    {
+        return call_user_func($this->strategy,$data);
+    }
 
 }

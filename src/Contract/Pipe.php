@@ -19,6 +19,11 @@ interface Pipe{
     public function process();
 
     /**
+     * @param $data
+     * @return mixed
+     */
+    public function processInputData($data);
+    /**
      * @param callable $strategy
      * @return mixed
      */
