@@ -4,32 +4,33 @@ use pipes\Contract\Pipe as IPipe;
 use pipes\Pipe;
 /**
  * Class Pipeline
+ * a set of pipes to handle payload
  * @author  demanliu
  */
 class Pipeline
 {
     public $pipes;
-    private $data;
-    function __construct($data=[],array $pipes)
+    private $payload;
+    function __construct($payload=[],array $pipes)
     {
         $this->pipes = $pipes;
-        $this->data = $data;
+        $this->payload = $payload;
     }
 
     /**
      * @return array
      */
-    public function getData(): array
+    public function getPayload(): array
     {
-        return $this->data;
+        return $this->payload;
     }
 
     /**
-     * @param array $data
+     * @param array $payload
      */
-    public function setData(array $data)
+    public function setPayload(array $payload)
     {
-        $this->data = $data;
+        $this->payload = $payload;
     }
 
     public function setPipes(array $pipes)
@@ -45,7 +46,7 @@ class Pipeline
     public function process()
     {
        foreach ($this->pipes as $pipe){
-           $this->data = $pipe->processInputData($this->data);
+           $this->payload = $pipe->processInputData($this->payload);
        }
 
     }

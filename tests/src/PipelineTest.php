@@ -16,6 +16,6 @@ class PipelineTest extends PHPUnit_Framework_TestCase
         $data = [1,2,3,4];
         $pipeline = new Pipeline($data,[$pipe1,$pipe2]);
         $pipeline->process();
-        self::assertEquals([4,6,8,10],$pipeline->getData());
+        self::assertEquals([4,6,8,10],$pipeline->getPayload());
     }
 }
