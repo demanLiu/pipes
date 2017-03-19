@@ -20,7 +20,7 @@ class Pipeline
     /**
      * @return array
      */
-    public function getPayload(): array
+    public function getPayload()
     {
         return $this->payload;
     }

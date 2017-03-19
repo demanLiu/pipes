@@ -6,7 +6,8 @@ namespace pipes\Contract;
  * @package pipes\Contract
  */
 
-interface Pipe{
+interface Pipe
+{
     /**
      * @param $data
      * @return mixed

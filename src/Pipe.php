@@ -31,6 +31,7 @@ class Pipe implements IPipe
     public function addPayload($data)
     {
         $this->payload[] = $data;
+        return $this;
     }
 
     /**
@@ -39,6 +40,7 @@ class Pipe implements IPipe
     public function setPayload($data)
     {
         $this->payload = $data;
+        return $this;
     }
 
     /**
@@ -47,6 +49,7 @@ class Pipe implements IPipe
     public function setStrategy(callable $strategy)
     {
         $this->strategy = $strategy;
+        return $this;
     }
 
     /**
@@ -58,11 +61,12 @@ class Pipe implements IPipe
     }
 
     /**
-     * @return array
+     * @return $this
      */
     public function process()
     {
-        return array_map($this->strategy,$this->payload);
+        $this->payload = array_map($this->strategy,$this->payload);
+        return $this;
     }
 
     /**
