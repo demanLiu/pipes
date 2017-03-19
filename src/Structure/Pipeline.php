@@ -9,10 +9,26 @@ use pipes\Pipe;
 class Pipeline
 {
     public $pipes;
-    public $data;
+    private $data;
     function __construct($data=[],array $pipes)
     {
         $this->pipes = $pipes;
+        $this->data = $data;
+    }
+
+    /**
+     * @return array
+     */
+    public function getData(): array
+    {
+        return $this->data;
+    }
+
+    /**
+     * @param array $data
+     */
+    public function setData(array $data)
+    {
         $this->data = $data;
     }
 
