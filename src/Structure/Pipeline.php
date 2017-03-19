@@ -29,13 +29,16 @@ class Pipeline
     public function process()
     {
        foreach ($this->pipes as $pipe){
-           $pipe->processInputData($this->data);
+           $this->data = $pipe->processInputData($this->data);
        }
 
     }
 
     public function getPaths()
     {
+        //TODO default enable pipePath
+        if(1){
 
+        }
     }
 }

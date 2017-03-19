@@ -71,7 +71,8 @@ class Pipe implements IPipe
      */
     public function processInputData($data)
     {
-        return call_user_func($this->strategy,$data);
+        return array_map($this->strategy,$data);
     }
+    //TODO merge process and processInputData
 
 }
