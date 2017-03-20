@@ -20,7 +20,8 @@ class DispatchPipeTest extends PHPUnit_Framework_TestCase
         $dispatch_pipe = new DispatchPipe($a,$pipes);
         $dispatch_pipe->loadMapping($map);
         $dispatch_pipe->process();
-        print_r($dispatch_pipe->getPipePayload('add'));
+        $this->assertEquals([2,5],$dispatch_pipe->getPipePayload('add'));
+        $this->assertEquals([4,6],$dispatch_pipe->getPipePayload('multi'));
 
     }
 
