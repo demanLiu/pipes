@@ -4,9 +4,10 @@ use pipes\Pipe;
 class MergePipe
 {
     public $pipes;
-    function __construct($pipe)
+    public $strategy;
+    function __construct(array $pipe = [])
     {
-
+        $this->pipes = $pipe;
     }
     public function setPipes(array $pipes)
     {
@@ -16,11 +17,17 @@ class MergePipe
     {
         $this->pipes[] = $pipe;
     }
+    public function setStrategy(callable $strategy)
+    {
+        $this->strategy = $strategy;
+    }
     public function process()
     {
+        $result = [];
         foreach ($this->pipes as $pipe){
-            $pipe->getPayload();
+            $result = call_user_func($this->strategy,$result,$pipe->getPayload());
         }
+        return $result;
     }
 
 
