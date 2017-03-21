@@ -11,5 +11,8 @@ class FilterPipe extends Pipe
                 unset($this->payload[$key]);
             }
         }
+        $this->payload = array_merge($this->payload);
+        return $this;
+
     }
 }
