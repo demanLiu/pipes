@@ -1,6 +1,6 @@
 <?php
 use pipes\Structure\Pipeline;
-use pipes\Pipe;
+use pipes\Actions\TransformPipe as Pipe;
 /**
  * Class PipelineTest
  * @author  demanliu

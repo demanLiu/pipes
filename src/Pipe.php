@@ -5,7 +5,7 @@ use pipes\Contract\Pipe as IPipe;
  * Class Pipe
  * @author  demanliu
  */
-class Pipe implements IPipe
+abstract class Pipe implements IPipe
 {
     /**
      * @var
@@ -65,7 +65,6 @@ class Pipe implements IPipe
      */
     public function process()
     {
-        $this->payload = array_map($this->strategy,$this->payload);
         return $this;
     }
 
@@ -75,7 +74,7 @@ class Pipe implements IPipe
      */
     public function processInputData($data)
     {
-        return array_map($this->strategy,$data);
+
     }
     //TODO merge process and processInputData
 

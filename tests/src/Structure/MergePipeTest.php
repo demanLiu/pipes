@@ -1,6 +1,6 @@
 <?php
 use pipes\Structure\MergePipe;
-use pipes\Pipe;
+use pipes\Actions\TransformPipe as Pipe;
 class MergePipeTest extends PHPUnit_Framework_TestCase
 {
     public function testProcess(){

@@ -1,10 +1,10 @@
 <?php
-use pipes\Pipe;
+use pipes\Actions\TransformPipe as Pipe;
 /**
  * Class PipeTest
  * @author  demanliu
  */
-class PipeTest extends PHPUnit_Framework_TestCase
+class TransformPipeTest extends PHPUnit_Framework_TestCase
 {
     public function testSetPayload(){
         $pipe = new Pipe();

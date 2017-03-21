@@ -1,5 +1,5 @@
 <?php
-use pipes\Pipe;
+use pipes\Actions\TransformPipe as Pipe;
 use pipes\Structure\DispatchPipe;
 class DispatchPipeTest extends PHPUnit_Framework_TestCase
 {
