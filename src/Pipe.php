@@ -10,11 +10,11 @@ class Pipe implements IPipe
     /**
      * @var
      */
-    private $payload;
+    protected $payload;
     /**
      * @var string
      */
-    private $strategy;
+    protected $strategy;
 
     /**
      * Pipe constructor.
