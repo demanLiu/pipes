@@ -2,6 +2,7 @@
     "name": "demanliu/pipes",
     "description": "some simple and easy pipes to deal with data quilkly",
     "type": "libiary",
+    "license": "MIT",
     "authors": [
         {
             "name": "demanliu",
